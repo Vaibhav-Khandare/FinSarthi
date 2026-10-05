@@ -1,0 +1,285 @@
+{
+  "schemes": [
+    {
+      "id": "scheme_001",
+      "name": "Maharashtra Student Support Scheme",
+      "description": "Financial assistance for economically weaker students pursuing higher education in Maharashtra.",
+      "short_description": "Up to ₹50,000 for eligible students in Maharashtra",
+      "state": "Maharashtra",
+      "occupation": ["student"],
+      "income_limit": 250000,
+      "age_min": 18,
+      "age_max": 35,
+      "categories": ["OBC", "SC", "ST", "EWS"],
+      "genders": [],
+      "benefit": "₹50,000",
+      "documents": ["Income Certificate", "Identity Proof", "Bonafide Certificate", "Residence Certificate"],
+      "rules": [
+        {"field": "is_student", "operator": "equals", "value": true, "label": "Student Status"},
+        {"field": "state", "operator": "equals", "value": "Maharashtra", "label": "State"},
+        {"field": "income", "operator": "less_than_or_equal", "value": 250000, "label": "Annual Income"},
+        {"field": "age", "operator": "greater_than_or_equal", "value": 18, "label": "Minimum Age"},
+        {"field": "age", "operator": "less_than_or_equal", "value": 35, "label": "Maximum Age"},
+        {"field": "category", "operator": "one_of", "value": ["OBC", "SC", "ST", "EWS"], "label": "Category"}
+      ],
+      "source": {
+        "name": "Maharashtra Government Education Portal (Demo Reference)",
+        "url": "https://mahadbt.maharashtra.gov.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Not for real-world application. Income-based student support for Maharashtra residents.",
+        "verified_at": "2025-01-15",
+        "is_demo": true
+      },
+      "how_to_apply": "Apply through the Maharashtra DBT portal (mahadbt.maharashtra.gov.in) with required documents.",
+      "tags": ["student", "education"],
+      "icon": "🎓"
+    },
+    {
+      "id": "scheme_002",
+      "name": "PM-KISAN Direct Benefit Transfer",
+      "description": "Central government scheme providing income support of ₹6,000 per year to eligible farmer families.",
+      "short_description": "₹6,000/year direct income support for farmers",
+      "state": "All India",
+      "occupation": ["farmer"],
+      "income_limit": null,
+      "age_min": 18,
+      "age_max": null,
+      "categories": [],
+      "genders": [],
+      "benefit": "₹6,000/year",
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account Details"],
+      "rules": [
+        {"field": "is_farmer", "operator": "equals", "value": true, "label": "Farmer Status"},
+        {"field": "age", "operator": "greater_than_or_equal", "value": 18, "label": "Minimum Age"}
+      ],
+      "source": {
+        "name": "PM-KISAN Official Portal",
+        "url": "https://pmkisan.gov.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Reference to official PM-KISAN portal. Income support for landholding farmer families.",
+        "verified_at": "2025-01-10",
+        "is_demo": true
+      },
+      "how_to_apply": "Register at pmkisan.gov.in or visit your nearest agriculture office.",
+      "tags": ["farmer", "agriculture"],
+      "icon": "🌾"
+    },
+    {
+      "id": "scheme_003",
+      "name": "MSME Credit Guarantee Scheme",
+      "description": "Collateral-free credit guarantee for micro and small enterprises to access business loans.",
+      "short_description": "Collateral-free loans up to ₹2 crore for MSMEs",
+      "state": "All India",
+      "occupation": ["entrepreneur", "business"],
+      "income_limit": 5000000,
+      "age_min": 21,
+      "age_max": 65,
+      "categories": [],
+      "genders": [],
+      "benefit": "Up to ₹2 crore collateral-free loan",
+      "documents": ["Udyam Registration", "Business Plan", "GST Certificate", "Bank Statements"],
+      "rules": [
+        {"field": "occupation", "operator": "one_of", "value": ["entrepreneur", "business", "msme"], "label": "Business Type"},
+        {"field": "age", "operator": "greater_than_or_equal", "value": 21, "label": "Minimum Age"},
+        {"field": "income", "operator": "less_than_or_equal", "value": 5000000, "label": "Annual Turnover"}
+      ],
+      "source": {
+        "name": "CGTMSE Official Portal (Demo Reference)",
+        "url": "https://www.cgtmse.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Credit guarantee for MSME units without third-party collateral.",
+        "verified_at": "2025-01-12",
+        "is_demo": true
+      },
+      "how_to_apply": "Apply through participating banks with Udyam registration and business documents.",
+      "tags": ["msme", "business", "credit"],
+      "icon": "🏭"
+    },
+    {
+      "id": "scheme_004",
+      "name": "Stand-Up India for Women Entrepreneurs",
+      "description": "Facilitates bank loans between ₹10 lakh and ₹1 crore for women entrepreneurs and SC/ST entrepreneurs.",
+      "short_description": "₹10L–₹1Cr loans for women entrepreneurs",
+      "state": "All India",
+      "occupation": ["entrepreneur", "business"],
+      "income_limit": null,
+      "age_min": 18,
+      "age_max": 65,
+      "categories": ["SC", "ST"],
+      "genders": ["Female"],
+      "benefit": "₹10 lakh – ₹1 crore bank loan",
+      "documents": ["Identity Proof", "Business Registration", "Project Report", "Caste Certificate"],
+      "rules": [
+        {"field": "gender", "operator": "equals", "value": "Female", "label": "Gender"},
+        {"field": "occupation", "operator": "one_of", "value": ["entrepreneur", "business"], "label": "Entrepreneur Status"},
+        {"field": "age", "operator": "greater_than_or_equal", "value": 18, "label": "Minimum Age"}
+      ],
+      "source": {
+        "name": "Stand-Up India Portal (Demo Reference)",
+        "url": "https://www.standupmitra.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Bank loans for women and SC/ST entrepreneurs for greenfield enterprises.",
+        "verified_at": "2025-01-08",
+        "is_demo": true
+      },
+      "how_to_apply": "Apply through Stand-Up India portal or participating banks.",
+      "tags": ["women", "entrepreneur", "startup"],
+      "icon": "👩‍💼"
+    },
+    {
+      "id": "scheme_005",
+      "name": "Startup India Seed Fund Scheme",
+      "description": "Provides financial assistance to startups for proof of concept, prototype development, and product trials.",
+      "short_description": "Up to ₹50 lakh seed funding for startups",
+      "state": "All India",
+      "occupation": ["entrepreneur", "startup"],
+      "income_limit": null,
+      "age_min": 18,
+      "age_max": 45,
+      "categories": [],
+      "genders": [],
+      "benefit": "Up to ₹50 lakh seed funding",
+      "documents": ["DPIIT Recognition", "Pitch Deck", "Founder Identity Proof", "Incorporation Certificate"],
+      "rules": [
+        {"field": "occupation", "operator": "one_of", "value": ["entrepreneur", "startup", "business"], "label": "Startup Status"},
+        {"field": "age", "operator": "less_than_or_equal", "value": 45, "label": "Maximum Age"},
+        {"field": "age", "operator": "greater_than_or_equal", "value": 18, "label": "Minimum Age"}
+      ],
+      "source": {
+        "name": "Startup India Portal (Demo Reference)",
+        "url": "https://www.startupindia.gov.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Seed funding for recognized startups at early stages.",
+        "verified_at": "2025-01-14",
+        "is_demo": true
+      },
+      "how_to_apply": "Apply via Startup India portal with DPIIT recognition.",
+      "tags": ["startup", "funding"],
+      "icon": "🚀"
+    },
+    {
+      "id": "scheme_006",
+      "name": "National Scholarship Portal — Post-Matric",
+      "description": "Scholarships for students from minority and economically weaker sections for post-matriculation studies.",
+      "short_description": "Post-matric scholarships for eligible students",
+      "state": "All India",
+      "occupation": ["student"],
+      "income_limit": 200000,
+      "age_min": 17,
+      "age_max": 30,
+      "categories": ["OBC", "SC", "ST", "Minority"],
+      "genders": [],
+      "benefit": "₹5,000 – ₹20,000/year",
+      "documents": ["Income Certificate", "Caste/Category Certificate", "Mark Sheets", "Admission Letter"],
+      "rules": [
+        {"field": "is_student", "operator": "equals", "value": true, "label": "Student Status"},
+        {"field": "income", "operator": "less_than_or_equal", "value": 200000, "label": "Annual Income"},
+        {"field": "category", "operator": "one_of", "value": ["OBC", "SC", "ST", "Minority"], "label": "Category"},
+        {"field": "age", "operator": "less_than_or_equal", "value": 30, "label": "Maximum Age"}
+      ],
+      "source": {
+        "name": "National Scholarship Portal (Demo Reference)",
+        "url": "https://scholarships.gov.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Post-matric scholarships for eligible category students.",
+        "verified_at": "2025-01-11",
+        "is_demo": true
+      },
+      "how_to_apply": "Register and apply at scholarships.gov.in during the application window.",
+      "tags": ["student", "education", "scholarship"],
+      "icon": "📚"
+    },
+    {
+      "id": "scheme_007",
+      "name": "Maharashtra Farmer Loan Waiver (Demo)",
+      "description": "Demo scheme for crop loan waiver for small and marginal farmers in Maharashtra.",
+      "short_description": "Crop loan waiver up to ₹2 lakh for farmers",
+      "state": "Maharashtra",
+      "occupation": ["farmer"],
+      "income_limit": 150000,
+      "age_min": 18,
+      "age_max": 70,
+      "categories": [],
+      "genders": [],
+      "benefit": "Up to ₹2 lakh loan waiver",
+      "documents": ["Aadhaar Card", "Land Records", "Loan Account Statement", "7/12 Extract"],
+      "rules": [
+        {"field": "is_farmer", "operator": "equals", "value": true, "label": "Farmer Status"},
+        {"field": "state", "operator": "equals", "value": "Maharashtra", "label": "State"},
+        {"field": "income", "operator": "less_than_or_equal", "value": 150000, "label": "Annual Income"}
+      ],
+      "source": {
+        "name": "Maharashtra Agriculture Department (Demo Reference)",
+        "url": "https://krishi.maharashtra.gov.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Not for real-world application. Loan waiver for small farmers.",
+        "verified_at": "2025-01-09",
+        "is_demo": true
+      },
+      "how_to_apply": "Submit application at the nearest agriculture department office.",
+      "tags": ["farmer", "loan"],
+      "icon": "🌱"
+    },
+    {
+      "id": "scheme_009",
+      "name": "Central Sector Scholarship for College Students",
+      "description": "Merit-cum-means scholarship for college students from low-income families across India.",
+      "short_description": "Annual scholarship for eligible college students",
+      "state": "All India",
+      "occupation": ["student"],
+      "income_limit": 450000,
+      "age_min": 18,
+      "age_max": 30,
+      "categories": ["OBC", "SC", "ST", "General", "EWS"],
+      "genders": [],
+      "benefit": "₹10,000 – ₹20,000/year",
+      "documents": ["Income Certificate", "Identity Proof", "Mark Sheets"],
+      "rules": [
+        {"field": "is_student", "operator": "equals", "value": true, "label": "Student Status"},
+        {"field": "income", "operator": "less_than_or_equal", "value": 450000, "label": "Annual Income"},
+        {"field": "age", "operator": "greater_than_or_equal", "value": 18, "label": "Minimum Age"},
+        {"field": "age", "operator": "less_than_or_equal", "value": 30, "label": "Maximum Age"}
+      ],
+      "source": {
+        "name": "National Scholarship Portal (Demo Reference)",
+        "url": "https://scholarships.gov.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Scholarship for college students with family income below threshold.",
+        "verified_at": "2025-01-13",
+        "is_demo": true
+      },
+      "how_to_apply": "Apply at scholarships.gov.in during the application window.",
+      "tags": ["student", "education", "scholarship"],
+      "icon": "🎯"
+    },
+    {
+      "id": "scheme_008",
+      "name": "Senior Citizen Savings Scheme (Demo)",
+      "description": "Demo scheme for senior citizens — intentionally age-restricted to show NOT ELIGIBLE results for young users.",
+      "short_description": "Higher interest savings for senior citizens",
+      "state": "All India",
+      "occupation": ["retired", "salaried"],
+      "income_limit": null,
+      "age_min": 60,
+      "age_max": null,
+      "categories": [],
+      "genders": [],
+      "benefit": "8.2% interest rate",
+      "documents": ["Identity Proof", "Age Proof", "Bank Account Details"],
+      "rules": [
+        {"field": "age", "operator": "greater_than_or_equal", "value": 60, "label": "Minimum Age (60+)"}
+      ],
+      "source": {
+        "name": "India Post / Government Savings (Demo Reference)",
+        "url": "https://www.indiapost.gov.in/",
+        "page": null,
+        "excerpt": "Demo Dataset — Savings scheme for citizens aged 60 and above.",
+        "verified_at": "2025-01-07",
+        "is_demo": true
+      },
+      "how_to_apply": "Visit nearest post office or authorized bank branch.",
+      "tags": ["senior", "savings"],
+      "icon": "👴"
+    }
+  ]
+}

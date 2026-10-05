@@ -1,0 +1,26 @@
+{
+  "demo_profile": {
+    "full_name": "Rahul Patil",
+    "age": 24,
+    "state": "Maharashtra",
+    "district": "Pune",
+    "occupation": "Student",
+    "annual_income": 180000,
+    "category": "OBC",
+    "gender": "Male",
+    "business_type": null,
+    "is_student": true,
+    "is_farmer": false,
+    "uploaded_documents": ["Income Certificate", "Identity Proof", "Bonafide Certificate", "Caste/Category Certificate", "Mark Sheets", "Admission Letter"]
+  },
+  "demo_documents": [
+    {
+      "filename": "Income_Certificate.pdf",
+      "content": "INCOME CERTIFICATE\n\nName: Rahul Patil\nAge: 24\nState: Maharashtra\nDistrict: Pune\nCategory: OBC\nOccupation: Student\nAnnual Family Income: Rs. 1,80,000\n\nThis is to certify that the above named person belongs to OBC category and is a bonafide student."
+    },
+    {
+      "filename": "Bonafide_Certificate.pdf",
+      "content": "BONAFIDE CERTIFICATE\n\nThis is to certify that Rahul Patil, age 24, is a bonafide student of Pune University, Maharashtra.\nCategory: OBC\nCourse: B.Tech Computer Science"
+    }
+  ]
+}
